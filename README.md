@@ -1,8 +1,11 @@
+
+<img width="1278" alt="Screenshot 2025-02-09 at 15 10 58" src="https://github.com/user-attachments/assets/d20010a5-f717-43a4-8145-a8bbbc1e0235" />
+
 ## Color Generator - React Fundamental Project 9
 
 This project is a color generator application built with React. Users can input a color and generate a list of shades and tints for that color. The application also allows users to copy color values to the clipboard and displays notifications using react-toastify.
 
-**Online Live:**
+**Online Live:** https://color-generator-arnob.netlify.app/
 
 ## Setup
 
