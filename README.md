@@ -1,6 +1,6 @@
-# Color Generator - React Fundamental Project 9
+# Color Generator - React, Vite, JavaScript, Values.js, React-Toastify, Clipboard API, Fundamental Project 9
 
-<img width="1278" alt="Screenshot 2025-02-09 at 15 10 58" src="https://github.com/user-attachments/assets/d20010a5-f717-43a4-8145-a8bbbc1e0235" />
+- **Live Demo:** []()
 
 ---
 
@@ -22,10 +22,10 @@ Color Generator is a React-based web application that allows users to input a co
 6. [Setup & Installation](#setup--installation)
 7. [Usage Instructions](#usage-instructions)
 8. [Component Walkthrough](#component-walkthrough)
-    - [App Component](#app-component)
-    - [Form Component](#form-component)
-    - [ColorList Component](#colorlist-component)
-    - [SingleColor Component](#singlecolor-component)
+   - [App Component](#app-component)
+   - [Form Component](#form-component)
+   - [ColorList Component](#colorlist-component)
+   - [SingleColor Component](#singlecolor-component)
 9. [Key Functionality & API](#key-functionality--api)
 10. [Styling and Responsive Design](#styling-and-responsive-design)
 11. [Code Examples](#code-examples)
@@ -83,18 +83,18 @@ Color-Generator--React-Fundamental-Project-9/
 ## Setup & Installation
 
 1. **Clone the repository:**
-    ```sh
-    git clone https://github.com/arnobt78/Color-Generator--React-Fundamental-Project-9.git
-    cd Color-Generator--React-Fundamental-Project-9
-    ```
+   ```sh
+   git clone https://github.com/arnobt78/Color-Generator--React-Fundamental-Project-9.git
+   cd Color-Generator--React-Fundamental-Project-9
+   ```
 2. **Install dependencies:**
-    ```sh
-    npm install
-    ```
+   ```sh
+   npm install
+   ```
 3. **Start the development server:**
-    ```sh
-    npm run dev
-    ```
+   ```sh
+   npm run dev
+   ```
    The app will be available at `http://localhost:5173` (or as specified by Vite).
 
 ---
@@ -115,10 +115,10 @@ Color-Generator--React-Fundamental-Project-9/
 
 - **Purpose:** Root component managing state for the input color and generated palette.
 - **Responsibilities:**
-    - Holds color state using React hooks.
-    - Handles submission to generate a new palette using `values.js`.
-    - Passes color data to child components (`Form`, `ColorList`).
-    - Catches invalid color errors and triggers toast notifications.
+  - Holds color state using React hooks.
+  - Handles submission to generate a new palette using `values.js`.
+  - Passes color data to child components (`Form`, `ColorList`).
+  - Catches invalid color errors and triggers toast notifications.
 
 ---
 
@@ -126,9 +126,9 @@ Color-Generator--React-Fundamental-Project-9/
 
 - **Purpose:** Collects user input (color hex code or via color picker).
 - **Responsibilities:**
-    - Maintains input state.
-    - Handles user input change and form submission.
-    - Communicates the submitted color back to the `App` component.
+  - Maintains input state.
+  - Handles user input change and form submission.
+  - Communicates the submitted color back to the `App` component.
 
 ---
 
@@ -136,9 +136,9 @@ Color-Generator--React-Fundamental-Project-9/
 
 - **Purpose:** Displays the generated list of colors as a responsive grid.
 - **Responsibilities:**
-    - Receives the list of color objects as props.
-    - Iterates and renders each color using the `SingleColor` component.
-    - Assigns a unique key to each color (usually based on index or hex value).
+  - Receives the list of color objects as props.
+  - Iterates and renders each color using the `SingleColor` component.
+  - Assigns a unique key to each color (usually based on index or hex value).
 
 ---
 
@@ -146,10 +146,10 @@ Color-Generator--React-Fundamental-Project-9/
 
 - **Purpose:** Visual representation of a single shade/tint.
 - **Responsibilities:**
-    - Renders the color block with appropriate background using inline CSS.
-    - Displays the hex value and the color’s weight (percentage).
-    - Handles click event to copy the hex code to clipboard via the Clipboard API.
-    - Shows feedback (toast) upon successful copy.
+  - Renders the color block with appropriate background using inline CSS.
+  - Displays the hex value and the color’s weight (percentage).
+  - Handles click event to copy the hex code to clipboard via the Clipboard API.
+  - Shows feedback (toast) upon successful copy.
 
 ---
 
@@ -159,10 +159,10 @@ Color-Generator--React-Fundamental-Project-9/
 
 - `values.js` is a library that generates tints and shades from a base color.
 - Usage example:
-    ```js
-    import Values from "values.js";
-    const colors = new Values("#f15025").all(10); // 10% steps
-    ```
+  ```js
+  import Values from "values.js";
+  const colors = new Values("#f15025").all(10); // 10% steps
+  ```
 - Each color object contains properties like `hex`, `weight`, etc.
 
 ---
@@ -170,15 +170,15 @@ Color-Generator--React-Fundamental-Project-9/
 ### Notifications with react-toastify
 
 - Import in `App.jsx`:
-    ```js
-    import { ToastContainer, toast } from "react-toastify";
-    import "react-toastify/dist/ReactToastify.css";
-    ```
+  ```js
+  import { ToastContainer, toast } from "react-toastify";
+  import "react-toastify/dist/ReactToastify.css";
+  ```
 - Show a toast:
-    ```js
-    toast.success("Color copied!");
-    toast.error("Invalid color code.");
-    ```
+  ```js
+  toast.success("Color copied!");
+  toast.error("Invalid color code.");
+  ```
 - Place `<ToastContainer position="top-center" />` in your main layout.
 
 ---
@@ -186,16 +186,16 @@ Color-Generator--React-Fundamental-Project-9/
 ### Copy to Clipboard
 
 - In `SingleColor.jsx`:
-    ```js
-    async function copyToClipboard(text) {
-      try {
-        await navigator.clipboard.writeText(text);
-        toast.success("Copied!");
-      } catch (error) {
-        toast.error("Failed to copy.");
-      }
+  ```js
+  async function copyToClipboard(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      toast.success("Copied!");
+    } catch (error) {
+      toast.error("Failed to copy.");
     }
-    ```
+  }
+  ```
 - On color block click: `copyToClipboard(hexValue)`
 
 ---
@@ -203,14 +203,14 @@ Color-Generator--React-Fundamental-Project-9/
 ## Styling and Responsive Design
 
 - Main color grid uses CSS Grid:
-    ```css
-    .colors {
-      min-height: calc(100vh - 160px);
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(223.33px, 1fr));
-      grid-template-rows: repeat(auto-fit, minmax(96px, 1fr));
-    }
-    ```
+  ```css
+  .colors {
+    min-height: calc(100vh - 160px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(223.33px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(96px, 1fr));
+  }
+  ```
 - The layout adapts to various screen sizes, ensuring a pleasant experience on desktop and mobile.
 
 ---
@@ -223,7 +223,7 @@ Color-Generator--React-Fundamental-Project-9/
 // App.jsx (core logic)
 import Values from "values.js";
 import { toast } from "react-toastify";
-const [color, setColor] = useState('');
+const [color, setColor] = useState("");
 const [colors, setColors] = useState([]);
 
 const handleSubmit = (e) => {
@@ -236,6 +236,26 @@ const handleSubmit = (e) => {
   }
 };
 ```
+
+js
+// App.jsx (core logic)
+import Values from "values.js";
+import { toast } from "react-toastify";
+const [color, setColor] = useState('');
+const [colors, setColors] = useState([]);
+
+const handleSubmit = (e) => {
+e.preventDefault();
+try {
+const colorsArray = new Values(color).all(10);
+setColors(colorsArray);
+} catch (error) {
+toast.error("Invalid color value!");
+}
+};
+
+````
+
 ---
 
 ### Example: Copy to Clipboard
@@ -250,7 +270,7 @@ const handleCopy = async () => {
     toast.error("Copy failed!");
   }
 };
-```
+````
 
 ---
 
