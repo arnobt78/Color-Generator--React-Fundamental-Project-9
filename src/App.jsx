@@ -22,8 +22,8 @@ const App = () => {
     <main>
       <Form addColor={addColor} />
       <ColorList colors={colors} />
-      {/* ToastContainer must be rendered once (e.g. at root) for toasts to appear; position controls where they show */}
-      <ToastContainer position='top-center' />
+      {/* ToastContainer must be rendered once (e.g. at root) for toasts to appear; position='bottom-right' shows toasts at bottom-right of screen */}
+      <ToastContainer position='bottom-right' />
     </main>
   );
 };
