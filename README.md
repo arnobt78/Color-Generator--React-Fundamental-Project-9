@@ -9,7 +9,7 @@ A hands-on React app that generates color palettes from any hex color. Enter a h
 
 - **Live Demo:** [https://create-color.vercel.app/](https://create-color.vercel.app/)
 
-<img width="1911" height="945" alt="Screenshot 2026-03-11 at 15 09 29" src="https://github.com/user-attachments/assets/13966ee6-e633-4be6-bab0-66292eaeba08" />
+![Screenshot 2026-03-11 at 15 09 29](https://github.com/user-attachments/assets/13966ee6-e633-4be6-bab0-66292eaeba08)
 
 ## Table of Contents
 
@@ -156,9 +156,11 @@ If you extend the project (e.g. analytics, optional API, or feature flags), you 
 - **Usage in code:** Read them via `import.meta.env.VITE_APP_TITLE`. Do not put secrets in `VITE_*`—they are embedded in the client bundle.
 - **Example:**  
   Create `.env.local` with:
+
   ```env
   VITE_APP_TITLE=Color Generator
   ```
+
   Then in JS: `const title = import.meta.env.VITE_APP_TITLE;`
 
 No `.env` file is required to run or build the project as-is.
