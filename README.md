@@ -9,7 +9,7 @@ A hands-on React app that generates color palettes from any hex color. Enter a h
 
 - **Live Demo:** [https://create-color.vercel.app/](https://create-color.vercel.app/)
 
----
+<img width="1911" height="945" alt="Screenshot 2026-03-11 at 15 09 29" src="https://github.com/user-attachments/assets/13966ee6-e633-4be6-bab0-66292eaeba08" />
 
 ## Table of Contents
 
